@@ -1,0 +1,39 @@
+{
+  "name": "soduku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njons/soduku.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/njons/soduku/issues"
+  },
+  "homepage": "https://github.com/njons/soduku#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.10.0",
+    "eslint-config-recommended": "^4.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.6.0",
+    "parcel-bundler": "^1.10.3"
+  },
+  "dependencies": {
+    "re": "^0.1.4",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  }
+}

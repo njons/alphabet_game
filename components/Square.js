@@ -1,15 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Board from "./Board";
-// import Input from "./Input";
 
 class Square extends React.Component {
   state = {
     active: null
-
-    //state for this?
-    // not display correct number
-    // this holds the random number
   };
 
   toggle(position) {

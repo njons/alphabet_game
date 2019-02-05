@@ -24667,7 +24667,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-// import Input from "./Input";
 var Square =
 /*#__PURE__*/
 function (_React$Component) {
@@ -24687,10 +24686,7 @@ function (_React$Component) {
     }
 
     return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Square)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
-      active: null //state for this?
-      // not display correct number
-      // this holds the random number
-
+      active: null
     }, _temp));
   }
 
@@ -24888,114 +24884,27 @@ function (_React$Component) {
         }
       } // do all the jazz
       // board = this.addChar(board);
+      // board = this.addId(board);
 
 
-      console.log("this is the board filled with letters:", board); // board = this.addId(board);
-      // console.log("this is the board filled with ids:", board);
+      console.log("this is the board filled with letters:", board); // console.log("this is the board filled with ids:", board);
       // board = this.validateRow(board, x, y);
       // let board = this.addNum(x, y);
       // console.log("this is the filled board:", board);
       // console.log("this is the validated board:", board);
 
       return board;
-    } // addChar(board) {
-    //   console.log("this is board in addChar():", board);
-    //   // add in all numbers by row
-    //   const chars = [
-    //     "A",
-    //     "B",
-    //     "C",
-    //     "D",
-    //     "E",
-    //     "F",
-    //     "G",
-    //     "H",
-    //     "I",
-    //     "J",
-    //     "K",
-    //     "L",
-    //     "M",
-    //     "N",
-    //     "O",
-    //     "P",
-    //     "Q",
-    //     "R",
-    //     "S",
-    //     "T",
-    //     "U",
-    //     "V",
-    //     "X",
-    //     "Y",
-    //     "Z"
-    //   ];
-    //   chars.map(char => {
-    //     console.log("this is char: ", char);
-    //     board.push({ char, displayed: false, id: 0 });
-    //   });
-    //   return board;
+    } // addId(board) {
+    //   return board.map((sq, i) => ({
+    //     value: sq.value,
+    //     displayed: sq.displayed,
+    //     id: i
+    //   }));
     // }
 
   }, {
-    key: "addId",
-    value: function addId(board) {
-      return board.map(function (sq, i) {
-        return {
-          value: sq.value,
-          displayed: sq.displayed,
-          id: i
-        };
-      });
-    }
-  }, {
     key: "validateRow",
-    value: function validateRow(board, x, y) {
-      // validation need to fulfill 3 criteria
-      // allowed numbers are 1-6
-      // 1. rows: can only contain one of each allowed nums (id is sequential, breaks at every 6th number)
-      // 2. columns: can only contain one of each allowed nums (id breaks at every 6th number)
-      // 3. sequence of 6 squares: can only contain one of each allowed nums (((id)&(id+1)) + ((id+6)&(id+7)) + ((id+13)&(id+14)))
-      console.log("this is board in validateRow():", board);
-      console.log("this is x in validateRow():", x);
-      console.log("this is y in validateRow():", y);
-      var singleVals = []; // console.log("this is filledRow:", filledRow);
-      // ensure no duplicates by column
-      // for (let i = 0; i < board.length; i++) {
-      // for (let i = 0; i < board.length - 1; i++) {
-
-      var allowedVals = board.filter(function (sq) {
-        console.log("this is sq.value in validateRow():", sq.value); // console.log("this is sq.id in validateRow():", sq.id);
-
-        var currVal = sq.value; // let nextVal = board[i + 1].value;
-
-        console.log("this is currVal in validateRow():", currVal); // console.log("this is nextVal in validateRow():", nextVal);
-        // console.log("this is singleVals in validateRow():", singleVals);
-
-        if (singleVals.indexOf(currVal) === -1) {
-          console.log("new value found");
-          return singleVals.push(currVal);
-          console.log("this is singleVals:", singleVals);
-        }
-      }); // allowedVals;
-      // console.log("this is singleVals in validateRow():", singleVals);
-      // console.log("this is filledBoard in validateRow():", filledBoard);
-      // return filledBoard;
-      // // console.log("this is sq:", sq.value);
-      // });
-      // console.log(board.push(board[i]));
-      // }
-      // }
-      // console.log("this is the filled board:", board);
-      //
-      // return board;
-      // console.log("this is the board coordinates:", board[x][y]);
-      // const validRowBoard = board.map(sq => {
-      //
-      // });
-      // console.log("this is row number:", x);
-      // console.log("this is square number:", y);
-      // board.map(row => {
-      //   console.log("this is square row:", row);
-      // });
+    value: function validateRow() {// console.log("this is validateRow");
     }
   }, {
     key: "render",
@@ -25010,9 +24919,7 @@ function (_React$Component) {
           displayed: "false",
           key: i
         });
-      }))) // board render
-      // use the board state (if holds answers) and insert the values given to each square
-      ;
+      })));
     }
   }]);
 
@@ -25061,7 +24968,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60465" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49200" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

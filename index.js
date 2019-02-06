@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
-import Board from "./components/Board";
+import App from "./components/App.js";
 
 // const App = () => <h1>Hello World</h1>;
 
-render(<Board />, document.getElementById("root"));
+render(<App />, document.getElementById("root"));

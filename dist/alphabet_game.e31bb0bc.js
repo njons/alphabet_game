@@ -24633,110 +24633,7 @@ if ("development" !== 'production') {
   // http://fb.me/prop-types-in-prod
   module.exports = require('./factoryWithThrowingShims')();
 }
-},{"./factoryWithTypeCheckers":"node_modules/prop-types/factoryWithTypeCheckers.js"}],"components/Square.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _Board = _interopRequireDefault(require("./Board"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-var Square =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Square, _React$Component);
-
-  function Square() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    var _temp;
-
-    _classCallCheck(this, Square);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Square)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
-      active: null
-    }, _temp));
-  }
-
-  _createClass(Square, [{
-    key: "toggle",
-    value: function toggle(position) {
-      if (this.state.active === position) {
-        this.setState({
-          active: null
-        });
-      } else {
-        this.setState({
-          active: position
-        });
-      }
-    }
-  }, {
-    key: "bgColour",
-    value: function bgColour(position) {
-      if (this.state.active === position) {
-        return "#FF69B4";
-      }
-
-      return "";
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      return _react.default.createElement("div", {
-        id: "square"
-      }, _react.default.createElement("p", {
-        style: {
-          background: this.bgColour(this.props.id)
-        },
-        onClick: function onClick() {
-          _this2.toggle(_this2.props.id);
-        },
-        className: "text"
-      }, this.props.value.char));
-    }
-  }]);
-
-  return Square;
-}(_react.default.Component);
-
-var _default = Square;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","prop-types":"node_modules/prop-types/index.js","./Board":"components/Board.js"}],"components/Header.js":[function(require,module,exports) {
+},{"./factoryWithTypeCheckers":"node_modules/prop-types/factoryWithTypeCheckers.js"}],"components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24805,7 +24702,7 @@ var getRandomInt = function getRandomInt(max) {
 
 var _default = getRandomInt;
 exports.default = _default;
-},{}],"components/Board.js":[function(require,module,exports) {
+},{}],"components/Grid.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24841,107 +24738,287 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var Board =
+var Grid =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Board, _React$Component);
+  _inherits(Grid, _React$Component);
 
-  function Board() {
+  function Grid() {
     var _getPrototypeOf2;
 
     var _this;
 
     var _temp;
 
-    _classCallCheck(this, Board);
+    _classCallCheck(this, Grid);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Board)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
-      boardNumbers: _this.createGrid(12, 9) // generates empty grid
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Grid)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
+      boardLetters: _this.fillGrid(10, 5) // generates empty grid
 
     }, _temp));
   }
 
-  _createClass(Board, [{
-    key: "createGrid",
-    value: function createGrid(x, y) {
-      // itereate over small grid 6 times
-      var board = [];
-      var id = 0;
+  _createClass(Grid, [{
+    key: "fillGrid",
+    value: function fillGrid(x, y) {
+      // collect 108 numbers (corresponds with the number of squares set in css) in an array (grid) and iterate over the array to place one number across each square in the grid
+      var grid = []; // let id = 0;
+
       var chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "X", "Y", "Z"];
 
       for (var i = 0; i < x; i++) {
         for (var j = 0; j < y; j++) {
+          // random chars are selected by generating a random array index in the below code and pushing it into the array
           var char = chars[Math.floor(Math.random() * chars.length)];
-          board.push({
-            char: char,
-            displayed: false,
-            id: id
+          grid.push({
+            char: char
           });
         }
-      } // do all the jazz
-      // board = this.addChar(board);
-      // board = this.addId(board);
+      }
 
-
-      console.log("this is the board filled with letters:", board); // console.log("this is the board filled with ids:", board);
-      // board = this.validateRow(board, x, y);
-      // let board = this.addNum(x, y);
-      // console.log("this is the filled board:", board);
-      // console.log("this is the validated board:", board);
-
-      return board;
-    } // addId(board) {
-    //   return board.map((sq, i) => ({
-    //     value: sq.value,
-    //     displayed: sq.displayed,
-    //     id: i
-    //   }));
-    // }
-
-  }, {
-    key: "validateRow",
-    value: function validateRow() {// console.log("this is validateRow");
+      console.log("this is the grid filled with letters:", grid);
+      return grid;
     }
   }, {
     key: "render",
     value: function render() {
       return _react.default.createElement("div", {
-        id: "container"
-      }, _react.default.createElement(_Header.default, null), _react.default.createElement("div", {
-        id: "board"
-      }, this.state.boardNumbers.map(function (square, i) {
+        id: "grid"
+      }, this.state.boardLetters.map(function (square, i) {
         return _react.default.createElement(_Square.default, {
           value: square,
-          displayed: "false",
-          key: i
+          key: i,
+          id: i
         });
-      })));
+      }));
     }
   }]);
 
-  return Board;
+  return Grid;
 }(_react.default.Component);
 
-var _default = Board;
+var _default = Grid;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Square":"components/Square.js","./Header":"components/Header.js","../utils/randNum":"utils/randNum.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Square":"components/Square.js","./Header":"components/Header.js","../utils/randNum":"utils/randNum.js"}],"components/Square.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _Grid = _interopRequireDefault(require("./Grid"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Square =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Square, _React$Component);
+
+  function Square() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    var _temp;
+
+    _classCallCheck(this, Square);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Square)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
+      active: false,
+      completed: false,
+      wordArray: []
+    }, _temp));
+  }
+
+  _createClass(Square, [{
+    key: "collectData",
+    value: function collectData(char) {
+      var _this2 = this;
+
+      // console.log("this is the id: ", id);
+      console.log("this is the letter: ", char);
+      var word = [];
+      word.push(char);
+      console.log("this is the word: ", word);
+      this.setState(function (prevState) {
+        return {
+          wordArray: prevState.wordArray.concat(char)
+        };
+      }, function () {
+        console.log("this is word array in collectData:", _this2.state.wordArray);
+        console.log("this is the letter: ", char);
+      });
+
+      if (this.state.active === id) {
+        this.setState({
+          active: false
+        });
+      } else {
+        this.setState({
+          active: id
+        });
+      }
+    } // write function to setState complete to true of provise is resolved
+    // bgColour(id) {
+    //   if (this.state.active === id) {
+    //     return "#FF69B4";
+    //   } else if (this.state.complete === id) {
+    //     return "#EEE";
+    //   }
+    //   return "";
+    // }
+
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return _react.default.createElement("div", {
+        id: "square"
+      }, _react.default.createElement("p", {
+        // style={{ background: this.bgColour(this.props.id) }}
+        onClick: function onClick() {
+          _this3.collectData(_this3.props.value.char);
+        },
+        className: "text"
+      }, this.props.value.char));
+    }
+  }]);
+
+  return Square;
+}(_react.default.Component);
+
+var _default = Square;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","prop-types":"node_modules/prop-types/index.js","./Grid":"components/Grid.js"}],"components/App.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Square = _interopRequireDefault(require("./Square"));
+
+var _Header = _interopRequireDefault(require("./Header"));
+
+var _Grid = _interopRequireDefault(require("./Grid"));
+
+var _randNum = _interopRequireDefault(require("../utils/randNum"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var App =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(App, _React$Component);
+
+  function App() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    var _temp;
+
+    _classCallCheck(this, App);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(App)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
+      words: false,
+      // this is the returned data
+      wordArray: []
+    }, _temp));
+  }
+
+  _createClass(App, [{
+    key: "render",
+    // do a fetch and pass query collected from the Grid to see if it is a word
+    // resolved promise: match with word
+    // set state of word to true if match
+    // feedback of word > new colour of letters
+    // rejected promise: not match with words
+    // keep word state as false.
+    value: function render() {
+      return _react.default.createElement("div", {
+        id: "container"
+      }, _react.default.createElement(_Header.default, null), _react.default.createElement(_Grid.default, null));
+    }
+  }]);
+
+  return App;
+}(_react.default.Component);
+
+var _default = App;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./Square":"components/Square.js","./Header":"components/Header.js","./Grid":"components/Grid.js","../utils/randNum":"utils/randNum.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = require("react-dom");
 
-var _Board = _interopRequireDefault(require("./components/Board"));
+var _App = _interopRequireDefault(require("./components/App.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // const App = () => <h1>Hello World</h1>;
-(0, _reactDom.render)(_react.default.createElement(_Board.default, null), document.getElementById("root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/Board":"components/Board.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _reactDom.render)(_react.default.createElement(_App.default, null), document.getElementById("root"));
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/App.js":"components/App.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -24968,7 +25045,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49200" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64375" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

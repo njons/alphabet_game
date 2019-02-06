@@ -38,12 +38,12 @@ li {
   list-style: none;
 }
 
-#board {
+#grid {
   background-color: grey;
   /* border: solid 5px black; */
   display: grid;
-  grid-template-columns: repeat(12, 80px);
-  grid-template-rows: repeat(9, 80px);
+  grid-template-columns: repeat(10, 80px);
+  grid-template-rows: repeat(5, 80px);
   grid-gap: 5px;
   /* height: calc(100vh - 120px); */
   padding: 10px;
